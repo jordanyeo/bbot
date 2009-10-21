@@ -259,6 +259,13 @@ hr.space {background:#fff;color:#fff;visibility:hidden;}
 .center {text-align:center;}
 body {background: #000 url('../images/background.jpg') repeat fixed center top;color:#fff;padding-top:2em;font-family: Georgia;}
 #body_container {background: url('../images/pattern.png') repeat top left;z-index:999;}
+#menu {width: 100%;background-color: rgba(0,0,0,0.4);margin: 20px 0px;padding:0px;float:left;}
+  #menu ul {width:600px;margin:0px auto;text-align:center;}
+  #menu ul li {list-style-type:none;font-size:1.5em;font-family:Georgia;font-style:italic;float:left;}
+  #menu ul li a {margin:0px;padding:0px;float:left;padding:10px 20px;color:#89857b;text-decoration:none; border-right:1px solid #605c52;}
+  #menu ul li a.active, #menu ul li a:hover {background: #000}
+  #menu ul li a.white {color:#fff;}
+  #menu ul li a.last {border:none;}
 h1, h2, h3, p {color:#fff;}
 img {display:block;margin:0px auto;}
 .slideshow {width:100%;height:630px;margin:0px auto;}
