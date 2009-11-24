@@ -1,4 +1,5 @@
 class GuestsController < ApplicationController
+  layout "admin"
   # GET /guests
   # GET /guests.xml
   def index
