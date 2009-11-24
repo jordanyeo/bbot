@@ -1,0 +1,48 @@
+<p>
+  <b>Last name:</b>
+  <%=h @invitation.last_name %>
+</p>
+
+<p>
+  <b>Keyword:</b>
+  <%=h @invitation.keyword %>
+</p>
+
+<p>
+  <b>Recipient:</b>
+  <%=h @invitation.recipient %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%=h @invitation.address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%=h @invitation.address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @invitation.city %>
+</p>
+
+<p>
+  <b>Postal cide:</b>
+  <%=h @invitation.postal_cide %>
+</p>
+
+<p>
+  <b>Label generated date:</b>
+  <%=h @invitation.label_generated_date %>
+</p>
+
+<p>
+  <b>Mailed date:</b>
+  <%=h @invitation.mailed_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_invitation_path(@invitation) %> |
+<%= link_to 'Back', invitations_path %>

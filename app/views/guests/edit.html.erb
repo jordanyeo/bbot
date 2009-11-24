@@ -1,0 +1,24 @@
+<h1>Editing guest</h1>
+
+<% form_for(@guest) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :rsvp %><br />
+    <%= f.check_box :rsvp %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @guest %> |
+<%= link_to 'Back', guests_path %>

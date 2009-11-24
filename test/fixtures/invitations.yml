@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  last_name: MyString
+  keyword: MyString
+  recipient: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  postal_cide: MyString
+  label_generated_date: 2009-11-23
+  mailed_date: 2009-11-23
+
+two:
+  last_name: MyString
+  keyword: MyString
+  recipient: MyString
+  address1: MyString
+  address2: MyString
+  city: MyString
+  postal_cide: MyString
+  label_generated_date: 2009-11-23
+  mailed_date: 2009-11-23

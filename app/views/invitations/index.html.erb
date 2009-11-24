@@ -1,0 +1,36 @@
+<h1>Listing invitations</h1>
+
+<table>
+  <tr>
+    <th>Last name</th>
+    <th>Keyword</th>
+    <th>Recipient</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>Postal cide</th>
+    <th>Label generated date</th>
+    <th>Mailed date</th>
+  </tr>
+
+<% @invitations.each do |invitation| %>
+  <tr>
+    <td><%=h invitation.last_name %></td>
+    <td><%=h invitation.keyword %></td>
+    <td><%=h invitation.recipient %></td>
+    <td><%=h invitation.address1 %></td>
+    <td><%=h invitation.address2 %></td>
+    <td><%=h invitation.city %></td>
+    <td><%=h invitation.postal_cide %></td>
+    <td><%=h invitation.label_generated_date %></td>
+    <td><%=h invitation.mailed_date %></td>
+    <td><%= link_to 'Show', invitation %></td>
+    <td><%= link_to 'Edit', edit_invitation_path(invitation) %></td>
+    <td><%= link_to 'Destroy', invitation, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New invitation', new_invitation_path %>
