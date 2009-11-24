@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20091124031457) do
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "rsvp"
+    t.integer  "invitation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -26,7 +27,8 @@ ActiveRecord::Schema.define(:version => 20091124031457) do
     t.string   "address1"
     t.string   "address2"
     t.string   "city"
-    t.string   "postal_cide"
+    t.string   "province"
+    t.string   "postal_code"
     t.date     "label_generated_date"
     t.date     "mailed_date"
     t.datetime "created_at"

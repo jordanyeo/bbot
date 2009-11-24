@@ -7,7 +7,8 @@ class CreateInvitations < ActiveRecord::Migration
       t.string :address1
       t.string :address2
       t.string :city
-      t.string :postal_cide
+      t.string :province
+      t.string :postal_code
       t.date :label_generated_date
       t.date :mailed_date
 
