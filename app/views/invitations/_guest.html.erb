@@ -1,0 +1,5 @@
+		<li id="<%=guest.id%>" class="guest">
+		  <p><%=guest.name%></p>
+				<%=link_to_remote image_tag('delete.png',:class => "delete_button"), :url => { :action => "delete_mentor", :id => guest.id }%>
+			
+		</li>

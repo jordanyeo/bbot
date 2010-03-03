@@ -18,7 +18,18 @@
     <% if invitation.mailed_date%>
       Mailed on <strong><%=h invitation.mailed_date %></strong>
     <% end %>
-    <%= link_to 'Show', invitation %>
+    
+    
+    <h3>Invitation Guests</h3>
+    <% if !invitation.guests.empty? %>
+      <ul>
+      <% for guest in invitation.guests%>
+        <li><%= guest.name%></li>
+      <%end%>
+      </ul>
+    <% else %>
+      <p>This invitation has no guests.</p>
+    <% end%>
     <%= link_to 'Edit', edit_invitation_path(invitation) %>
   </li>
 <% end %>

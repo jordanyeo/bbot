@@ -1,0 +1,77 @@
+<div id="invitation_form">
+<% form_for(@invitation) do |f| %>
+  <%= f.error_messages %>
+
+  
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br/>
+  
+    <%= f.label :keyword %>
+    <%= f.text_field :keyword %>
+    <br/>
+    <br/>
+    
+    <%= f.label :recipient %>
+    <%= f.text_field :recipient %>
+    <br/>
+  
+    <%= f.label :address1 %>
+    <%= f.text_field :address1 %>
+    <br/>
+  
+    <%= f.label :address2 %>
+    <%= f.text_field :address2 %>
+    <br/>
+  
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+    <br/>
+  
+    <%= f.label :province %>
+    <%= f.text_field :province %>
+    <br/>
+  
+    <%= f.label :postal_code %>
+    <%= f.text_field :postal_code %>
+    <br/>
+  
+    <%= f.submit 'Update' %>
+  
+<% end %>
+</div>
+
+<div id="guest_form">
+  <% if !@invitation.guests.empty?%>
+    <h2>Guests</h2>
+    <ul id="guests">
+        <%= render :partial => "guest", :collection => @invitation.guests%>
+    </ul>
+  <% else %>
+    <p>This invitation has no guests.</p>
+  <% end %>
+  
+  
+
+  <br style="clear:both;"/>
+  <br/>
+  <h3>Add Guest to this Invitation</h3>
+  <% remote_form_for Guest.new(:invitation_id => @invitation.id), :url => {:action => "add_guest"} do |f| %>
+
+	<div id="guest_errors"></div>
+
+
+	  <%= f.label :first_name %>
+	  <%= f.text_field :first_name %>
+    <br/>
+		
+		<%= f.label :last_name %>
+	  <%= f.text_field :last_name %>
+	  <br/>
+
+    <%= f.hidden_field :invitation_id%>
+	
+	  <p class="button_container"><%= f.submit "Add Guest" %></p>
+	<% end %>
+  
+</div>
