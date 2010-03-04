@@ -83,4 +83,24 @@ class InvitationsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def add_guest
+    @guest = Guest.create(params[:guest])
+    
+    respond_to do |format|
+      format.html {redirect_to(:action => "invitations")}
+      format.js
+    end
+  end
+  
+  def delete_guest
+    @guest = Guest.find(params[:id])
+    @guest.destroy
+
+    
+    respond_to do |format|
+      format.html {redirect_to(:action => "guest")}
+      format.js
+    end
+  end
 end

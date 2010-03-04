@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :guests
 
-  map.resources :invitations
+  map.resources :invitations, :member => {:add_guest => :post, :delete_guest => :post}
 
   # The priority is based upon order of creation: first created -> highest priority.
 

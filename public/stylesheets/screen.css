@@ -290,8 +290,9 @@ a {color:#fff;text-align:center;display:block;font-family: Georgia, serif;font-s
 #invitation_form {border-right: 5px solid #605c52;width:330px;float:left;}
 #invitation_form label {width:100px;float:left;padding-top:5px;}
 
-#guest_form {float:right;}
+#guest_form {float:right;display:block;width:450px;}
 .guest p {float:left;margin:0px;}
+.guest {clear:both;margin-bottom:5px;float:none;}
 .guest img {float:right;}
 #feature_container {background:#605c52;width:490px;margin:0px auto;}
 #feature_box {width: 450px;margin:0px auto;background:url(/images/feature_bg.png) repeat-x #6d695e;padding:20px;}
