@@ -1,8 +1,10 @@
 <h1>Dashboard</h1>
-<p>Out of X Invited Guests, X have RSVP'd</p>
+<h2>Out of <%= @total_invitations.count%> Invitations, <%= @rsvpd_invitations.count%> have RSVP'd</h2>
 
-<p>Out of X RSVP'd, X have agreed to come!</p>
+<h2><%=@yes_guests.count%> have agreed to come!</h2>
 
-<h3>Print Labels</h3>
+
 
 <h2><%= "06/26/2010".to_date - Date.today %> days until we are married!!!</h2>
+
+<h3>Print Labels</h3>

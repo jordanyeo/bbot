@@ -1,0 +1,3 @@
+if @guest.errors.empty?
+  page << "$('#guest_#{@guest.id}').animate({ backgroundColor: '#80bd3c' }, 1000);"
+end

@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(:version => 20091124031457) do
     t.string   "postal_code"
     t.date     "label_generated_date"
     t.date     "mailed_date"
+    t.text     "songs"
+    t.boolean  "rsvpd"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

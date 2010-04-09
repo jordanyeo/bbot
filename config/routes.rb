@@ -1,4 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
+  map.thanks 'rsvp/thanks', :controller => :rsvp, :action => "thanks"
+  map.rsvp_yes 'rsvp/yes', :controller => "rsvp", :action => "yes"
+  map.rsvp_no 'rsvp/no', :controller => "rsvp", :action => "no"
+  map.update_rsvp 'rsvp/update/:id', :controller => "rsvp", :action => "rsvp", :action => "update"
+  map.build_rsvp 'rsvp/build', :controller => "rsvp", :action => "build"
+  map.rsvp 'rsvp/:last_name/:keyword', :controller => "rsvp", :action => "edit"
+  map.connect 'rsvp', :controller => "rsvp", :action => "index"
+
+  
   map.resources :guests
 
   map.resources :invitations, :member => {:add_guest => :post, :delete_guest => :post}

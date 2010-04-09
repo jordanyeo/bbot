@@ -3,6 +3,7 @@ if @guest.errors.empty?
   page["guest_last_name"].val("")
   page.replace_html("guest_errors", "")
   page.insert_html(:bottom, "guests" , :partial => "guest" , :object => @guest)
+  page.visual_effect(:slide_up, "first")
   page.visual_effect(:drop_in, @guest.id)
   
 else

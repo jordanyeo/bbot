@@ -1,0 +1,9 @@
+<h1>Invitation: <%= @invitation.last_name%> (<%= @invitation.recipient%>)</h1>
+<ul>
+<% for guest in @invitation.guests%>
+  <li><strong><%= guest.name%></strong> has RSVP'd <strong>*<%= guest.rsvp_friendly%>*</strong></li>
+<%end%>
+</ul>
+
+<h2>Songs request:</h2>
+<%= @invitation.songs%>

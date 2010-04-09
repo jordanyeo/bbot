@@ -1,9 +1,10 @@
 class GuestsController < ApplicationController
   layout "admin"
+  before_filter :verify_access
   # GET /guests
   # GET /guests.xml
   def index
-    @guests = Guest.all
+    @guests = Guest.ordered_by_last_name
 
     respond_to do |format|
       format.html # index.html.erb

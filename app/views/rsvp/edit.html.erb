@@ -1,0 +1,76 @@
+<div id="feature_container">
+  <div id="feature_box">
+    <h1>RSVP for our wedding!</h1>
+    <% if @invitation %>
+      
+      <h2>Your invitation last name is <em><%= @invitation.last_name.capitalize-%></em></h2>
+    
+      <h3>Guests</h3>
+      <ul id="guests">
+      <% for guest in @invitation.guests %>
+        <% if guest.rsvp == true%>
+          <li id="guest_<%=guest.id%>" class="yes">
+            <span><%= guest.name%></span> 
+            <% remote_form_for(guest, :url => rsvp_yes_url) do |f| %>
+              <%= f.hidden_field :id, :value => guest.id%>
+              <%= f.hidden_field :rsvp, :value => true%>
+              <%= f.submit "Yes"%>
+            <% end %>
+            <% remote_form_for(guest, :url => rsvp_no_url) do |f| %>
+              <%= f.hidden_field :id, :value => guest.id%>
+              <%= f.hidden_field :rsvp, :value => false%>
+              <%= f.submit "No"%>
+            <% end %>
+            
+          </li>
+        <%else%>
+          <%if guest.rsvp == false%>
+            <li id="guest_<%=guest.id%>" class="no">
+              <span><%= guest.name%></span> 
+              <% remote_form_for(guest, :url => rsvp_yes_url) do |f| %>
+                <%= f.hidden_field :id, :value => guest.id%>
+                <%= f.hidden_field :rsvp, :value => true%>
+                <%= f.submit "Yes"%>
+              <% end %>
+              <% remote_form_for(guest, :url => rsvp_no_url) do |f| %>
+                <%= f.hidden_field :id, :value => guest.id%>
+                <%= f.hidden_field :rsvp, :value => false%>
+                <%= f.submit "No"%>
+              <% end %>
+              
+            </li>
+          <%else%>
+            <li id="guest_<%=guest.id%>">
+              <span><%= guest.name%></span> 
+              <% remote_form_for(guest, :url => rsvp_yes_url) do |f| %>
+                <%= f.hidden_field :id, :value => guest.id%>
+                <%= f.hidden_field :rsvp, :value => true%>
+                <%= f.submit "Yes"%>
+              <% end %>
+              <% remote_form_for(guest, :url => rsvp_no_url) do |f| %>
+                <%= f.hidden_field :id, :value => guest.id%>
+                <%= f.hidden_field :rsvp, :value => false%>
+                <%= f.submit "No"%>
+              <% end %>
+            </li>
+          <%end%>
+        <%end%>
+      <% end %>
+      </ul>
+      <% form_for @invitation, :url => update_rsvp_url(@invitation.id) do |f|%>
+        <hr/>
+        <h3>Song Requests:</h3>
+        <p>Please feel free to tell us any songs you'd like to hear at during the dance. Your input is greatly appreciated!</p>
+        <p>Note: We reserve the right to refuse the following songs: Cadillac Ranch, The Chicken Dance, Macarena, YMCA. Sorry.</p>
+        <%= f.text_area :songs%>
+        
+        <%= f.submit "Submit Songs"%>
+        <br style="clear:both;"/>
+      <% end %>
+    <% else %>
+      <h3>Whoops!, your invitation could not be found.</h3>
+      <p>Please <a href="/rsvp/">go back</a> and ensure you've entered your information correctly.</p>
+      <p>If that still doesn't work, please contact Becca at (780) 938-2457 to RSVP the old-fashioned way. Sorry for the inconvenience!</p>
+    <% end %>
+  </div>
+</div>

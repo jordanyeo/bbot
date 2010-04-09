@@ -1,5 +1,6 @@
 class InvitationsController < ApplicationController
   layout "admin"
+  before_filter :verify_access
   # GET /invitations
   # GET /invitations.xml
   def index

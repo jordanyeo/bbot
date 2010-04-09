@@ -42,15 +42,15 @@
 </div>
 
 <div id="guest_form">
+  <h2>Guests</h2>
+  <ul id="guests">
   <% if !@invitation.guests.empty?%>
-    <h2>Guests</h2>
-    <ul id="guests">
-        <%= render :partial => "guest", :collection => @invitation.guests%>
-    </ul>
+    <%= render :partial => "guest", :collection => @invitation.guests%>
+    
   <% else %>
-    <p>This invitation has no guests.</p>
+    <li id="first">This invitation has no guests.</li>
   <% end %>
-  
+  </ul>
   
 
   <br style="clear:both;"/>
