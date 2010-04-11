@@ -1,0 +1,15 @@
+<h1>Import the wedding spreadsheet (only once!)</h1>
+
+<% form_for :invitation, :url=>{:controller=>"import", :action=>"csv_import"}, :html => { :multipart => true } do |f| -%>
+
+<label for="dump_file">
+  CSV:
+</label>
+<div class="input_container">
+  <%= f.file_field :file -%>
+</div>
+<p class="center"><%= submit_tag 'Magic!'-%></p>
+<hr/>
+</div>
+
+<% end -%>

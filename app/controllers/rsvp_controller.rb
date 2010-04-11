@@ -22,6 +22,7 @@ class RsvpController < ApplicationController
     @invitation = Invitation.find(params[:id])
     
     if @invitation.update_attributes(params[:invitation])
+      Notifier.deliver_rsvp_notification(@invitation)
       redirect_to thanks_url
     end
   end

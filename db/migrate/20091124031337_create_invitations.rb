@@ -5,7 +5,6 @@ class CreateInvitations < ActiveRecord::Migration
       t.string :keyword
       t.string :recipient
       t.string :address1
-      t.string :address2
       t.string :city
       t.string :province
       t.string :postal_code
